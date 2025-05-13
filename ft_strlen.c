@@ -6,11 +6,11 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 21:00:59 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/09 15:38:35 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/13 18:49:55 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {
