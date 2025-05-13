@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:37:49 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/13 17:27:28 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/13 17:37:38 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 // 	size_t	i;
 // 	int		*arr;
 
-// 	nmemb = 0;
+// 	nmemb = 5;
 // 	size = sizeof(int);
 // 	arr = ft_calloc(nmemb, size);
 // 	if (arr == NULL)
