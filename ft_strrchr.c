@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
 	unsigned char	ch;
@@ -27,7 +29,7 @@ char	*ft_strrchr(const char *s, int c)
 		s--;
 		i--;
 	}
-	return (0);
+	return (NULL);
 }
 
 // #include <stdio.h>
