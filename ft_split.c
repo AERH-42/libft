@@ -12,21 +12,14 @@
 
 #include "libft.h"
 
-int	find_seperator(char a, char *charset)
+size_t	find_seperator(char a, char c)
 {
-	int	i;
-
-	i = 0;
-	while (charset[i] != '\0')
-	{
-		if (charset[i] == a)
-			return (1);
-		i++;
-	}
+	if (c == a)
+		return (1);
 	return (0);
 }
 
-int	count_words(char *str, char *charset)
+size_t	count_words(char const *str, char c)
 {
 	int	word;
 	int	i;
@@ -37,7 +30,7 @@ int	count_words(char *str, char *charset)
 	word = 0;
 	while (str[i] != '\0')
 	{
-		if (find_seperator(str[i], charset))
+		if (find_seperator(str[i], c))
 			word = 0;
 		else if (!word)
 		{
@@ -49,49 +42,29 @@ int	count_words(char *str, char *charset)
 	return (count);
 }
 
-char	*ft_strdup(char *src, int size)
-{
-	size_t	i;
-	char	*dest;
-
-	if (src == NULL)
-		return (NULL);
-	dest = (char *)malloc((size + 1) * sizeof(char));
-	if (dest == NULL)
-		return (NULL);
-	i = 0;
-	while (src[i] != '\0' && i < size)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = 0;
-	return (dest);
-}
-
 char	**ft_split(char const *str, char c)
 {
 	char	**arr;
-	int		i;
-	int		x;
-	int		k;
+	size_t	i;
+	size_t	x;
+	size_t	k;
 
-	if (str == NULL || charset == NULL)
+	if (str == NULL || &c == NULL)
 		return (NULL);
-	arr = (char **)malloc((count_words(str, charset) + 1) * sizeof(char *));
+	arr = malloc((count_words(str, c) + 1) * sizeof(char *));
 	if (arr == NULL)
 		return (NULL);
 	i = 0;
 	k = 0;
-	while (str[i] != '\0' && k < count_words(str, charset))
+	while (str[i] != '\0' && k < count_words(str, c))
 	{
-		while (str[i] != '\0' && find_seperator(str[i], charset))
+		while (str[i] != '\0' && find_seperator(str[i], c))
 			i++;
 		x = i;
-		while (str[i] != '\0' && !find_seperator(str[i], charset))
+		while (str[i] != '\0' && !find_seperator(str[i], c))
 			i++;
 		if (i > x)
-			arr[k++] = ft_strdup(&str[x], i - x);
+			arr[k++] = ft_strdup(&str[x]);
 	}
 	arr[k] = 0;
 	return (arr);
@@ -100,7 +73,7 @@ char	**ft_split(char const *str, char c)
 // #include <stdio.h>
 // int main() {
 //     char *str = "hello,world,how,are,you";
-//     char *charset = ",";
+//     char charset = ',';
 //     char **result = ft_split(str, charset);  
 //     printf("Test 1 - Basic split:\n");
 //     int i = 0;
