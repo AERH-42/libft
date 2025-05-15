@@ -12,14 +12,7 @@
 
 #include "libft.h"
 
-size_t	find_seperator(char a, char c)
-{
-	if (c == a)
-		return (1);
-	return (0);
-}
-
-size_t	count_words(char const *str, char c)
+static size_t	count_words(char const *str, char c)
 {
 	int	word;
 	int	i;
@@ -30,7 +23,7 @@ size_t	count_words(char const *str, char c)
 	word = 0;
 	while (str[i] != '\0')
 	{
-		if (find_seperator(str[i], c))
+		if (str[i] == c)
 			word = 0;
 		else if (!word)
 		{
@@ -40,6 +33,26 @@ size_t	count_words(char const *str, char c)
 		i++;
 	}
 	return (count);
+}
+
+static char	*ft_strmal(char const *src, size_t size)
+{
+	size_t	i;
+	char	*dest;
+
+	if (src == NULL)
+		return (NULL);
+	dest = (char *)malloc((size + 1) * sizeof(char));
+	if (dest == NULL)
+		return (NULL);
+	i = 0;
+	while (src[i] != '\0' && i < size)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = 0;
+	return (dest);
 }
 
 char	**ft_split(char const *str, char c)
@@ -64,7 +77,7 @@ char	**ft_split(char const *str, char c)
 		while (str[i] != '\0' && !find_seperator(str[i], c))
 			i++;
 		if (i > x)
-			arr[k++] = ft_strtrim(&str[x], &c);
+			arr[k++] = ft_strmal(&str[x], i - x);
 	}
 	arr[k] = 0;
 	return (arr);
