@@ -15,7 +15,7 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	unsigned char	ch;
-	unsigned int	i;
+	int	i;
 
 	i = 0;
 	while (s[i])

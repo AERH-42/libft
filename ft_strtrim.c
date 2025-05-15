@@ -12,29 +12,36 @@
 
 #include "libft.h"
 
+static int	ft_checkset(char s, char const *set)
+{
+	while (*set)
+	{
+		if (s == *set)
+			return (1);
+		set++;
+	}
+	return (0);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len;
-	size_t	i;
-	char	*dest;
-	char	*start;
-	char	*end;
+	size_t		len;
+	char		*dest;
+	char const	*end;
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	i = 0;
-	while (ft_strchr(set[i], *s1) != NULL)
-	{
-		start = ft_strchr(s1, set[i]);
-		end = ft_strrchr(s1, set[i]);
-		i++;
-	}
-	len = end - start;
+	end = s1 + ft_strlen(s1);
+	while (*s1 && ft_checkset(*s1, set))
+		s1++;
+	while (end > s1 && ft_checkset(*(end - 1), set))
+		end--;
+	len = end - s1;
 	dest = malloc((len + 1) * sizeof(char));
 	if (!dest)
 		return (NULL);
 	dest[0] = '\0';
-	ft_strlcat(dest, start, len + 1);
+	ft_strlcat(dest, s1, len + 1);
 	return (dest);
 }
 
@@ -42,8 +49,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int main(void)
 // {
-// 	char s1[] = "Hello World@";
-// 	char set[] = "@!";
+// 	char s1[] = "@Hello!@";
+// 	char set[] = "@";
 // 	char *result = ft_strtrim(s1, set);
 // 	printf("%s\n", result);
 // 	free(result);
