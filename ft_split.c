@@ -64,30 +64,32 @@ char	**ft_split(char const *str, char c)
 		while (str[i] != '\0' && !find_seperator(str[i], c))
 			i++;
 		if (i > x)
-			arr[k++] = ft_strdup(&str[x]);
+			arr[k++] = ft_strtrim(&str[x], &c);
 	}
 	arr[k] = 0;
 	return (arr);
 }
 
-// #include <stdio.h>
-// int main() {
-//     char *str = "hello,world,how,are,you";
-//     char charset = ',';
-//     char **result = ft_split(str, charset);  
-//     printf("Test 1 - Basic split:\n");
-//     int i = 0;
-//     while (result[i]) 
-// 	{
-//         printf("Word %d: %s\n", i, result[i]);
-//         i++;
-//     }  
-//     i = 0;
-//     while (result[i]) 
-// 	{
-//         free(result[i]);
-//         i++;
-//     }
-//     free(result);
-//     return 0;
-// }
+#include <stdio.h>
+
+int main() 
+{
+    char *str = "hello,world,how,are,you";
+    char charset = ',';
+    char **result = ft_split(str, charset);  
+    printf("Basic split: %s\n", str);
+    int i = 0;
+    while (result[i]) 
+	{
+        printf("Word %d: %s\n", i, result[i]);
+        i++;
+    }  
+    i = 0;
+    while (result[i]) 
+	{
+        free(result[i]);
+        i++;
+    }
+    free(result);
+    return 0;
+}
