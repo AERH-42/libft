@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+static size_t	find_seperator(char a, char c)
+{
+	if (c == a)
+		return (1);
+	return (0);
+}
+
 static size_t	count_words(char const *str, char c)
 {
 	int	word;
@@ -23,7 +30,7 @@ static size_t	count_words(char const *str, char c)
 	word = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == c)
+		if (find_seperator(str[i], c))
 			word = 0;
 		else if (!word)
 		{
