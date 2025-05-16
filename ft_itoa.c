@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 20:56:23 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/16 17:42:17 by aerh             ###   ########.fr       */
+/*   Created: 2025/03/27 18:49:16 by aerh              #+#    #+#             */
+/*   Updated: 2025/05/16 17:43:19 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putchar(char c)
 {
-	unsigned char	ch;
-	int				i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	s += i;
-	ch = (unsigned char)c;
-	while (i >= 0)
-	{
-		if (*s == ch)
-			return ((char *)s);
-		s--;
-		i--;
-	}
-	return (NULL);
+	write(1, &c, 1);
 }
 
-// #include <stdio.h>
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+	{
+		write (1, "-2147483648", 11);
+		return ;
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+	}
+	ft_putchar(nb % 10 + '0');
+}
 
-// int main(void)
-// {
-// 	char test[] = "Hello World";
-// 	printf ("%s\n", ft_strrchr(test, 0));
-// }
+char	*ft_itoa(int n)
+{
+	
+}
