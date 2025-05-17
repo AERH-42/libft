@@ -75,6 +75,6 @@ char	*ft_itoa(int n)
 
 // int main (void)
 // {
-// 	int	test = 1234567;
+// 	int	test = -1234567;
 // 	printf("%s\n", ft_itoa(test));
 // }
