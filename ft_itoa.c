@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_count(int n)
+static int	ft_count(int n)
 {
 	int	count;
 
@@ -32,7 +32,7 @@ int	ft_count(int n)
 	return (count);
 }
 
-void	ft_putnbr(char *dest, int n, int *i)
+static void	ft_putnbr(char *dest, int n, int *i)
 {
 	if (n == -2147483648)
 	{
