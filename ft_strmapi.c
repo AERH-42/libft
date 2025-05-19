@@ -34,7 +34,19 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	return (dest);
 }
 
-int main(void)
-{
+// static char	ft_test(unsigned int i, char c)
+// {
+// 	if (i % 2 == 1)
+// 		return ('*');
+// 	else
+// 		return (c);
+// }
 
-}
+// #include <stdio.h>
+
+// int main(void)
+// {
+// 	char s[] = "Hello World";
+// 	char *result = ft_strmapi(s, ft_test);
+// 	printf("%s\n", result);
+// }
