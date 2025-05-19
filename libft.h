@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 14:00:06 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/19 14:00:32 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/19 16:42:45 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ char	**ft_split(char const *str, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 void	*ft_striteri(char *s, void (*f)(unsigned int, char *));
-void	*ft_putchar_fd(char c, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
 
 #endif

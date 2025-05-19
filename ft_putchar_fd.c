@@ -6,16 +6,15 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:37:49 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/19 13:58:09 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/19 16:39:18 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
-	return (0);
 }
 
 // int main(void)

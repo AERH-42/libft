@@ -1,52 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:37:49 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/19 16:43:15 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/19 16:45:33 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	len;
-	size_t	i;
-	char	*dest;
-
-	if (s == NULL || f == NULL)
-		return (NULL);
-	len = ft_strlen(s);
-	dest = malloc((len + 1) * sizeof(char));
-	if (dest == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	if (s == NULL)
+		return ;
+	while (*s)
 	{
-		dest[i] = f(i, s[i]);
-		i++;
+		write(fd, s, 1);
+		s++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	write(fd, "\n", 1);
 }
-
-// static char	ft_test(unsigned int i, char c)
-// {
-// 	if (i % 2 == 1)
-// 		return ('*');
-// 	else
-// 		return (c);
-// }
-
-// #include <stdio.h>
 
 // int main(void)
 // {
-// 	char s[] = "Hello World";
-// 	char *result = ft_strmapi(s, ft_test);
-// 	printf("%s\n", result);
+// 	char c[] = "Hello World";
+// 	int fd = 1;
+// 	ft_putendl_fd(c, fd);
 // }
