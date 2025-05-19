@@ -1,52 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:37:49 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/19 13:46:30 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/19 13:58:09 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
+void	*ft_putchar_fd(char c, int fd)
 {
-	size_t	len;
-	size_t	i;
-	char	*dest;
-
-	if (s == NULL || f == NULL)
-		return (NULL);
-	len = ft_strlen(s);
-	dest = malloc((len + 1)* sizeof(char));
-	if (dest == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		dest[i] = f(i, s[i]);
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	write(fd, &c, 1);
+	return (0);
 }
-
-// static char	ft_test(unsigned int i, char c)
-// {
-// 	if (i % 2 == 1)
-// 		return ('*');
-// 	else
-// 		return (c);
-// }
-
-// #include <stdio.h>
 
 // int main(void)
 // {
-// 	char s[] = "Hello World";
-// 	char *result = ft_strmapi(s, ft_test);
-// 	printf("%s\n", result);
+// 	char c = 'C';
+// 	int fd = 2;
+// 	ft_putchar_fd(c, fd);
 // }
