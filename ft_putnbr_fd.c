@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:37:49 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/20 16:48:28 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/20 16:50:40 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_putchar_fd(n % 10 + '0', fd);
 }
 
-int main(void)
-{
-	int n = -2147483648LL;
-	int fd = 1;
-	ft_putnbr_fd(n, fd);
-}
+// int main(void)
+// {
+// 	int n = -2147483648LL;
+// 	int fd = 1;
+// 	ft_putnbr_fd(n, fd);
+// }

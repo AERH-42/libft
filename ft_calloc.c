@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:37:49 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/13 17:37:38 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/20 17:09:02 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,16 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*dest;
 	size_t	i;
 
-	if (nmemb == 0 || size == 0 || nmemb > (size_t)-1 / size)
+	if (nmemb > (size_t)-1 / size)
 		return (NULL);
-	else
+	else if (nmemb == 0 || size == 0)
 	{
-		dest = malloc(nmemb * size);
-		if (dest == NULL)
-			return (NULL);
+		dest = malloc(0);
+		return (dest);
 	}
+	dest = malloc(nmemb * size);
+	if (dest == NULL)
+		return (NULL);
 	i = 0;
 	while (i < (nmemb * size))
 	{
