@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 22:44:16 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/09 15:38:39 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/20 16:29:28 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	if (i == n)
 		return (0);
-	return (s1[i] - s2[i]);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
 // #include <stdio.h>
