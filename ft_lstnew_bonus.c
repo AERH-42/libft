@@ -21,12 +21,25 @@ t_list	*ft_lstnew(void *content)
 		return (NULL);
 	node->content = content;
 	node->next = NULL;
+	return(node);
 }
 
+// #include <stdio.h>
 
 // int main(void)
 // {
-// 	char c[] = "Hello World";
-// 	int fd = 1;
-// 	ft_putstr_fd(NULL, fd);
+// 	t_list *node = ft_lstnew("Hello World");
+// 	printf ("%s\n", (char *)node->content);
+// 	free(node);
 // }
+
+/*
+t_list is a struct with two members
+	content: a generic pointer (void *) to store any data type
+	next: a pointer to another t_list node, making a linked list
+node->content;
+	this is equivalent to (*node).content. 
+	The arrow accesses the struct member via a pointer
+node->next = NULL;
+	ensures the node doesn't point to garbage
+*/
