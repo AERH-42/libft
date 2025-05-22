@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:37:49 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/22 17:52:18 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/22 18:00:20 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,22 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 
 // int main(void)
 // {
-// 	char	*test;
-// 	test = malloc(2 * sizeof(char));
-// 	test[0] = 'H';
-// 	test[1] = '\0';
-// 	t_list	*lst = ft_lstnew(test);
-// 	printf ("%s\n", (char *)lst->content);
-// 	ft_lstdelone(lst, ft_del);
-// 	printf ("%s\n", test);
+// 	char	*test1;
+// 	char	*test2;
+// 	test1 = malloc(2 * sizeof(char));
+// 	test2 = malloc(2 * sizeof(char));
+// 	test1[0] = 'H';
+// 	test1[1] = '\0';
+// 	test2[0] = 'W';
+// 	test2[1] = '\0';
+// 	t_list	*lst1 = ft_lstnew(test1);
+// 	t_list	*lst2 = ft_lstnew(test2);
+// 	printf ("lst1 = %s\n", (char *)lst1->content);
+// 	printf ("lst2 = %s\n", (char *)lst2->content);
+// 	ft_lstdelone(lst1, ft_del);
+// 	ft_lstdelone(lst2, ft_del);
+// 	printf ("lst1 after free = %s\n", test1);
+// 	printf ("lst2 after free = %s\n", test2);
 // }
 
 /*
