@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:37:49 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/22 18:00:20 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/22 21:15:04 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	t_list	*current;
 	t_list	*n_node;
 
-	if (lst == NULL || *lst == NULL || del == NULL)
+	if (*lst == NULL || del == NULL)
 		return ;
 	current = *lst;
 	while (current)
@@ -49,10 +49,15 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 // 	test2[1] = '\0';
 // 	t_list	*lst1 = ft_lstnew(test1);
 // 	t_list	*lst2 = ft_lstnew(test2);
-// 	printf ("lst1 = %s\n", (char *)lst1->content);
-// 	printf ("lst2 = %s\n", (char *)lst2->content);
-// 	ft_lstdelone(lst1, ft_del);
-// 	ft_lstdelone(lst2, ft_del);
+// 	t_list	*tmp = NULL;
+// 	ft_lstadd_front(&tmp, lst1);
+// 	ft_lstadd_back(&tmp, lst2);
+// 	while (tmp)
+// 	{
+// 		printf ("lst = %s\n", (char *)tmp->content);
+// 		tmp = tmp->next;
+// 	}
+// 	ft_lstclear(&lst1, ft_del);
 // 	printf ("lst1 after free = %s\n", test1);
 // 	printf ("lst2 after free = %s\n", test2);
 // }
