@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:37:49 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/22 17:19:18 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/22 17:52:18 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (lst == NULL || del == NULL)
+	t_list	*current;
+	t_list	*n_node;
+
+	if (lst == NULL || *lst == NULL || del == NULL)
 		return ;
-	del(lst->content);
-	free(lst);
+	current = *lst;
+	while (current)
+	{
+		n_node = current->next;
+		del(current->content);
+		free(current);
+		current = n_node;
+	}
+	*lst = NULL;
 }
 
 // static void	ft_del(void *ptr)
@@ -40,7 +50,18 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 // }
 
 /*
+lst
+	address of a pointer (t_list**)
+*lst
+	pointer itself (t_list*)
+**lst
+	the actual node
 Check for NULL
-Free contect
-Free node
+Start at head of list (*lst)
+For each node
+	save next pointer
+	delete node content
+	free node
+	go to next node
+set head of list to NULL, else its garbage
 */
