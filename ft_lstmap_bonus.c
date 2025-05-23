@@ -24,11 +24,6 @@ t_list  *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
     while (lst)
     {
         ptr = f(lst->content);
-        if (ptr == NULL)
-        {
-            ft_lstclear(&newlist, del);
-            return (NULL);
-        }
         node = ft_lstnew(ptr);
         if (node == NULL)
         {
@@ -47,27 +42,40 @@ t_list  *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 // 	free(ptr);
 // }
 
+// static void    *double_int(void *content)
+// {
+//     int *num = (int *)content;
+//     int *new = malloc(sizeof(int));
+//     *new = (*num) * 2;
+//     return (new);
+// }
+
 // #include <stdio.h>
 
 // int main(void)
 // {
-//     t_list	*tmp = NULL;
-//     t_list  *lst1 = ft_lstnew("Hello");
-//     t_list  *lst2 = ft_lstnew("World");
-// 	ft_lstadd_front(&tmp, lst1);
-// 	ft_lstadd_back(&tmp, lst2);
-// 	ft_lstiter(tmp, ft_ft);
-// 	while (tmp)
+//     t_list *list = NULL;
+//     t_list *mapped;
+//     int *num1 = malloc(sizeof(int));
+//     int *num2 = malloc(sizeof(int));
+//     *num1 = 42;
+//     *num2 = 100;
+//     ft_lstadd_back(&list, ft_lstnew(num1));
+//     ft_lstadd_back(&list, ft_lstnew(num2));
+//     mapped = ft_lstmap(list, double_int, ft_del);
+//     t_list *tmp = mapped;
+//     while (tmp) 
 //     {
-//         t_list *next = tmp->next;
-//         free(tmp);
-//         tmp = next;
+//         printf("%d\n", *(int *)tmp->content);
+//         tmp = tmp->next;
 //     }
+//     ft_lstclear(&list, ft_del);
+//     ft_lstclear(&mapped, ft_del);
 // }
 
 /*
-Check f is NULL
-if lst == NULL, it will skip the while loop
+Check if arguments are NULL
+Set newlist
 Use a while loop till NULL to reach each node
 	run function for lst->content
 	let lst be address of next node to transverse
