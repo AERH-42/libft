@@ -75,9 +75,11 @@ t_list  *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 /*
 Check if arguments are NULL
-Set newlist
-Use a while loop till NULL to reach each node
+Set newlist to NULL and commence mapping through lst
+Use a while loop till NULL to reach each node in lst
 	run function for lst->content
-	let lst be address of next node to transverse
-	should next node be NULL, while loop stops
+    create new nodes for newlist
+    if node creation fails, free memory
+	add new node for newlist
+	step to next node in lst
 */
