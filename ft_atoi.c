@@ -13,11 +13,9 @@
 int	ft_atoi(const char *str)
 {
 	int	result;
-	int	sign_count;
 	int	sign_type;
 
 	result = 0;
-	sign_count = 0;
 	sign_type = 1;
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
