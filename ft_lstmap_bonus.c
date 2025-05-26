@@ -6,35 +6,35 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:37:49 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/26 12:19:53 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/26 17:32:25 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list  *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list  *newlist;
-    t_list  *node;
-    void    *ptr;
+	t_list	*newlist;
+	t_list	*node;
+	void	*ptr;
 
-    if (f == NULL || del == NULL || lst == NULL)
-        return (NULL);
-    newlist = NULL;
-    while (lst)
-    {
-        ptr = f(lst->content);
-        node = ft_lstnew(ptr);
-        if (node == NULL)
-        {
-            del(ptr);
-            ft_lstclear(&newlist, del);
-            return (NULL);
-        }
-        ft_lstadd_back(&newlist, node);
-        lst = lst->next;
-    }
-    return (newlist);
+	if (f == NULL || del == NULL || lst == NULL)
+		return (NULL);
+	newlist = NULL;
+	while (lst)
+	{
+		ptr = f(lst->content);
+		node = ft_lstnew(ptr);
+		if (node == NULL)
+		{
+			del(ptr);
+			ft_lstclear(&newlist, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&newlist, node);
+		lst = lst->next;
+	}
+	return (newlist);
 }
 
 // static void	ft_del(void *ptr)

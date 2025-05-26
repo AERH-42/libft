@@ -6,21 +6,21 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:37:49 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/26 12:19:55 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/26 17:30:52 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-    if (f == NULL)
-        return ;
-    while (lst)
-    {
-        f(lst->content);
-        lst = lst->next;
-    }
+	if (f == NULL)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
 // #include <stdio.h>
 
