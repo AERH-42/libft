@@ -6,17 +6,17 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:37:49 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/22 15:26:48 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/26 12:36:44 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	 ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (new == NULL)
+	if (new == NULL || lst == NULL)
 		return ;
 	if (*lst == NULL)
 		*lst = new;
@@ -25,7 +25,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		last = ft_lstlast(*lst);
 		last->next = new;
 	}
-	new->next = NULL;
 }
 
 // #include <stdio.h>
