@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 20:56:23 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/28 14:44:46 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 19:55:15 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ char	*ft_strchr(const char *s, int c)
 {
 	unsigned char	ch;
 
-	if (!s)
-		return (NULL);
 	ch = (unsigned char)c;
 	while (*s && *s != ch)
 		s++;
