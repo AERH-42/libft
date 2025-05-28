@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 16:26:48 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/28 12:59:18 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 15:02:24 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 //     printf("Buffer: %s\n", dest);
 //     printf("Total Length: %u\n", result);
 
-//     return 0;
+//     return (0);
 // }

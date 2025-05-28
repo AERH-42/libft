@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 16:58:28 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/28 14:46:11 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 15:05:09 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	size_t	src_len;
 
 	if (!dest || !src)
-		return (NULL);
+		return (0);
 	i = 0;
 	src_len = 0;
 	while (src[src_len] != '\0')
@@ -34,3 +34,19 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	}
 	return (src_len);
 }
+
+// #include <stdio.h>
+
+// int main (void)
+// {
+// 	char dest[5] = "Hi";
+//     char src[] = "World";
+//     unsigned int size = sizeof(dest);
+
+//     unsigned int result = ft_strlcpy(dest, src, size);
+
+//     printf("Buffer: %s\n", dest);
+//     printf("Source length: %u\n", result);
+
+//     return (0);
+// }
