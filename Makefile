@@ -24,8 +24,6 @@ BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 CC = cc
 #compilation flags
 CFLAGS = -Wall -Wextra -Werror
-#looks in current directory for header files
-INCLUDES = -I includes
 
 #default target, builds mandatory only
 all: $(NAME)
@@ -40,7 +38,7 @@ bonus: $(OBJS) $(BONUS_OBJS)
 
 #compiles .c to .o
 %.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 #removes .o files
 clean:
