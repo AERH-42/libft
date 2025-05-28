@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 22:41:39 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/28 14:54:57 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 15:47:07 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@ int	ft_atoi(const char *str)
 	int	result;
 	int	sign_type;
 
-	if (!str)
-		return (0);
 	result = 0;
 	sign_type = 1;
 	while (*str == ' ' || (*str >= 9 && *str <= 13))

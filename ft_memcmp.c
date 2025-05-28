@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 20:56:23 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/28 14:33:31 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 15:47:54 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	const unsigned char	*p1;
 	const unsigned char	*p2;
 
-	if (!s1 || !s2)
-		return (0);
 	p1 = (const unsigned char *)s1;
 	p2 = (const unsigned char *)s2;
 	if (n == 0)

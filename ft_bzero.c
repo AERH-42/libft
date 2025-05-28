@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 20:56:23 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/28 14:53:29 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 15:46:57 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*ptr;
 
-	if (!s)
-		return ;
 	ptr = (unsigned char *)s;
 	while (n--)
 	{

@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 22:44:16 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/28 15:07:29 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 16:12:04 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (!s1 || !s2)
-		return (0);
 	while (s1[i] && s1[i] == s2[i] && i < n)
 		i++;
 	if (i == n)

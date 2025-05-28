@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 16:26:48 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/28 15:02:24 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 16:11:45 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	i = 0;
 	dest_len = 0;
 	src_len = 0;
-	if (!dest || !src)
-		return (0);
 	while (dest[dest_len] && dest_len < size)
 		dest_len++;
 	while (src[src_len])
