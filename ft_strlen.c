@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 21:00:59 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/26 12:40:34 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 14:48:40 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
+	if (!str)
+		return (0);
 	i = 0;
 	while (str[i] != '\0')
 	{

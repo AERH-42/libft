@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 16:58:28 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/09 15:38:28 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 14:46:11 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	size_t	i;
 	size_t	src_len;
 
+	if (!dest || !src)
+		return (NULL);
 	i = 0;
 	src_len = 0;
 	while (src[src_len] != '\0')

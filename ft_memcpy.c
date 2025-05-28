@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 20:56:23 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/09 16:07:21 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 14:35:04 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char		*ptr;
 	const unsigned char	*s;
 
+	if (!dest || !src)
+		return (NULL);
 	ptr = (unsigned char *)dest;
 	s = (const unsigned char *)src;
 	while (n--)

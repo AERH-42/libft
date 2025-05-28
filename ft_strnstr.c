@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 13:19:45 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/09 22:36:15 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 14:50:09 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 
+	if (!big || !little)
+		return (NULL);
 	if (*little == '\0')
 		return ((char *)big);
 	while (*big && len)
@@ -31,11 +33,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	return (0);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int main(void)
-// {
-// 	const char big[] = "Foo Bar Baz";
-// 	const char small[] = "r Ba";
-// 	printf ("%s\n", ft_strnstr(big, small, 11));
-// }
+int main(void)
+{
+	const char big[] = "Foo Bar Baz";
+	const char small[] = "r Ba";
+	printf ("%s\n", ft_strnstr(big, small, 11));
+}

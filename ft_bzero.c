@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 20:56:23 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/28 14:21:22 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 14:28:15 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*ptr;
 
+	if (!s)
+		return ;
 	ptr = (unsigned char *)s;
 	while (n--)
 	{
@@ -24,11 +26,11 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int main(void)
-// {
-// 	char str[11] = "Hello World";
-// 	ft_bzero(str, 5);
-// 	printf ("%s\n", str);
-// }
+int main(void)
+{
+	char str[11] = "Hello World";
+	ft_bzero(NULL, 5);
+	printf ("%s\n", str);
+}

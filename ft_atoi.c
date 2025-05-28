@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 22:41:39 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/22 20:31:12 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 14:26:10 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@ int	ft_atoi(const char *str)
 	int	result;
 	int	sign_type;
 
+	if (!str)
+		return (0);
 	result = 0;
 	sign_type = 1;
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
@@ -39,6 +41,8 @@ int	ft_atoi(const char *str)
 
 // int main(void)
 // {
+// 	//Null tests
+// 	printf("NULL -> %d\n",ft_atoi(NULL));
 //     // Basic tests
 //     printf("'42' -> %d\n", ft_atoi("42"));// Expected: 42
 //     printf("'-123' -> %d\n", ft_atoi("-123"));// Expected: -123

@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 20:56:23 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/09 15:38:19 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 14:42:31 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*ptr;
 
+	if (!s)
+		return (NULL);
 	ptr = (unsigned char *)s;
 	while (n--)
 	{
@@ -30,6 +32,5 @@ void	*ft_memset(void *s, int c, size_t n)
 // int main(void)
 // {
 // 	char str[11] = "Hello World";
-// 	ft_memset(str, -1, 5);
-// 	printf ("%s\n", str);
+// 	printf ("%s\n", (char *)ft_memset(str, 72, 5));
 // }

@@ -6,7 +6,7 @@
 /*   By: aerh <aerh@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 20:56:23 by aerh              #+#    #+#             */
-/*   Updated: 2025/05/16 17:42:17 by aerh             ###   ########.fr       */
+/*   Updated: 2025/05/28 14:51:35 by aerh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strrchr(const char *s, int c)
 	unsigned char	ch;
 	int				i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	while (s[i])
 		i++;
@@ -37,5 +39,5 @@ char	*ft_strrchr(const char *s, int c)
 // int main(void)
 // {
 // 	char test[] = "Hello World";
-// 	printf ("%s\n", ft_strrchr(test, 0));
+// 	printf ("%s\n", ft_strrchr(test, 111));
 // }
